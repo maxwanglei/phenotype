@@ -24,7 +24,9 @@ pool <- dbPool(
     host = db$server,
     port = db$port,
     username = db$uid,
-    password = db$pwd
+    password = db$pwd,
+    ssl.ca = db$ssl_ca,
+    sslmode = "require"
 )
 tbl <- db$table
 onStop(function() {
